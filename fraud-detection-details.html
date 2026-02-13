@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Pipeline - Project Details | Muhammed Basith N</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent: #8b5cf6;
+            --border: #e2e8f0;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #60a5fa;
+            --accent: #a78bfa;
+            --border: #334155;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            gap: 0.8rem;
+        }
+
+        .project-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tech-badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text);
+        }
+
+        .section p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .section ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .section li {
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .tech-item strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        .links-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .links-section h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            background: var(--surface);
+            border-color: var(--primary);
+        }
+
+        .highlight-box {
+            background: rgba(37, 99, 235, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .project-header h1 {
+                font-size: 2rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+    <div class="container">
+        <a href="index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <div class="project-header">
+            <h1>Fraud Detection Pipeline (MVP)</h1>
+            <div class="project-meta">
+                <span class="tech-badge">Python 3.10</span>
+                <span class="tech-badge">FastAPI</span>
+                <span class="tech-badge">Scikit-learn</span>
+                <span class="tech-badge">Cloud Deployment</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Overview</h2>
+            <p>
+                This project is a <strong>Proof of Concept (PoC)</strong> demonstrating how to take a Machine Learning
+                model from "Research" to "Production."
+                Instead of using static datasets, I built a system that simulates user behavior, trains a model, and
+                serves predictions via a public API.
+            </p>
+            <div class="highlight-box">
+                <strong>Key Achievement:</strong> Transformed a notebook-based ML model into a production-ready web
+                service with real-time inference capabilities.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Tech Stack</h2>
+            <div class="tech-stack-grid">
+                <div class="tech-item">
+                    <strong>Core</strong>
+                    <p>Python 3.10</p>
+                </div>
+                <div class="tech-item">
+                    <strong>ML Engine</strong>
+                    <p>Scikit-learn (Logistic Regression), Pandas, NumPy</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Backend</strong>
+                    <p>FastAPI, Uvicorn, Pydantic (Data Validation)</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Frontend</strong>
+                    <p>HTML5, CSS3, Vanilla JavaScript (Fully AI-based)</p>
+                </div>
+                <div class="tech-item">
+                    <strong>Deployment</strong>
+                    <p>Render Cloud (PaaS), Git/GitHub</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Technical Features</h2>
+
+            <h3>Synthetic Data Engineering</h3>
+            <ul>
+                <li>Since real financial data is private (PII), I wrote a <strong>Data Simulator</strong> to generate
+                    1,000+ user records.</li>
+                <li>Injected specific "Fraud Patterns" (e.g., login spikes > 85/day) to test the model's ability to
+                    detect outliers vs. normal behavior.</li>
+                <li>Implemented imbalanced dataset techniques to simulate real-world fraud scenarios (99:1
+                    normal-to-fraud ratio).</li>
+            </ul>
+
+            <h3>API Architecture</h3>
+            <ul>
+                <li>Implemented <strong>RESTful endpoints</strong> (POST/GET) with strict type validation using
+                    Pydantic.</li>
+                <li>Integrated CORS middleware to allow secure communication between the frontend and cloud backend.
+                </li>
+                <li>Built automatic API documentation using FastAPI's built-in Swagger UI.</li>
+                <li>Structured endpoints for scalability: <code>/predict</code>, <code>/health</code>,
+                    <code>/model-info</code>
+                </li>
+            </ul>
+
+            <h3>Model Persistence</h3>
+            <ul>
+                <li>Used <strong>joblib</strong> to serialize ("freeze") the trained model, allowing the server to
+                    restart without losing intelligence.</li>
+                <li>Implemented version control for model updates without downtime.</li>
+            </ul>
+
+            <h3>Operational Maturity</h3>
+            <ul>
+                <li>Includes a <strong>SQLite Database</strong> to log every prediction request for audit history.</li>
+                <li>Includes a <strong>Test Suite</strong> to verify logic before deployment.</li>
+                <li>Implemented error handling and logging for production reliability.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Challenges & Learnings</h2>
+
+            <h3>The "Imbalanced Data" Problem</h3>
+            <p>
+                I learned that <strong>99% accuracy is misleading</strong> in fraud detection. When 99% of transactions
+                are legitimate,
+                a model that predicts "everything is legitimate" would achieve 99% accuracy but catch zero fraud!
+            </p>
+            <p>
+                <strong>Solution:</strong> I implemented a <strong>Confusion Matrix</strong> to track Precision and
+                Recall instead of just accuracy.
+                This revealed the true performance: how many frauds we caught vs. how many false alarms we triggered.
+            </p>
+
+            <h3>Deployment Journey</h3>
+            <p>
+                Navigated the difference between <code>localhost</code> and <code>0.0.0.0</code> bindings when moving
+                from a local environment
+                to the Render cloud. Had to configure environment variables properly and ensure the application listens
+                on the correct port.
+            </p>
+
+            <h3>Frontend-Backend Integration</h3>
+            <p>
+                Initially struggled with CORS errors when the frontend tried to communicate with the deployed API.
+                Resolved by adding proper CORS middleware configuration in FastAPI.
+            </p>
+        </div>
+
+        <div class="links-section">
+            <h2>Project Links</h2>
+            <div class="btn-group">
+                <a href="https://basith235.github.io/Fraud-detector-/" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="https://fraud-detector-ylw1.onrender.com/docs" target="_blank" class="btn btn-outline">
+                    <i class="fas fa-book"></i> API Documentation (Swagger)
+                </a>
+                <a href="https://github.com/Basith235/Fraud-detector-" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

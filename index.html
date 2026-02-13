@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Full Stack Engineer & Mechanical Systems Specialist - Professional portfolio showcasing software development, engineering projects, and technical expertise.">
+    <title>Muhammed Basith N | Mechanical Engineer & ML Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            /* Light Mode Variables */
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-muted: #64748b;
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --accent: #8b5cf6;
+            --success: #10b981;
+            --border: #e2e8f0;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --bg: #0f172a;
+            --surface: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --primary: #3b82f6;
+            --primary-hover: #60a5fa;
+            --accent: #a78bfa;
+            --success: #34d399;
+            --border: #334155;
+            --nav-bg: rgba(15, 23, 42, 0.8);
+            --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Global Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background var(--transition), color var(--transition);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Sticky Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cv-btn {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+
+        .nav-cv-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        /* Hero Section */
+        header {
+            padding: 10rem 2rem 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, var(--primary) -100%, transparent 40%),
+                radial-gradient(circle at bottom left, var(--accent) -100%, transparent 40%);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            display: inline-block;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.39);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.23);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            background: var(--surface);
+            transform: translateY(-2px);
+        }
+
+        /* Section Utilities */
+        .section-padding {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Bento Grid - About Me */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .bento-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .bento-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .bento-large {
+            grid-column: span 2;
+        }
+
+        .bento-tall {
+            grid-row: span 2;
+        }
+
+        .bento-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .bento-item h3 i {
+            color: var(--primary);
+        }
+
+        .bento-item p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-badge {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--bg);
+        }
+
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-company {
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            margin-left: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Education Grid */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .education-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .education-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .education-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .education-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects - Case Study Focus */
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .card.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9) translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .card.filter-show {
+            animation: fadeInScale 0.5s forwards;
+            display: block;
+        }
+
+        .card:hover {
+            box-shadow: var(--card-shadow);
+            transform: translateY(-10px);
+        }
+
+        .card-img {
+            height: 220px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img::after {
+            content: 'VIEW CASE STUDY';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) translateY(20px);
+            opacity: 0;
+            color: white;
+            font-weight: 800;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-img::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) translateY(0);
+        }
+
+        .card:hover .card-img {
+            filter: brightness(0.7);
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .tag-group {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--primary);
+            background: rgba(37, 99, 235, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-footer {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .card-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .card-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact-cta {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 4rem;
+            text-align: center;
+            border: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Back to Top */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        #backToTop:hover {
+            background: var(--primary-hover);
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .nav-links a:not(.nav-cv-btn) {
+                display: none;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-large,
+            .bento-tall {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .timeline {
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="light">
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">MB.</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="#" class="nav-cv-btn" onclick="downloadCV(event)"><i class="fas fa-download"></i> CV</a>
+                <button class="theme-toggle" id="themeBtn" aria-label="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <span class="hero-badge"><i class="fas fa-circle" style="font-size: 0.5rem; margin-right: 0.3rem;"></i> Open to
+            Opportunities</span>
+        <h1>Muhammed Basith N</h1>
+        <p class="subtitle">
+            Mechanical Engineer | Automation & ML Enthusiast<br>
+            <span style="font-size: 1rem;">Exploring the intersection of mechanical systems and machine learning</span>
+        </p>
+        <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">View Portfolio</a>
+            <a href="#" onclick="downloadCV(event)" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Download
+                CV</a>
+        </div>
+    </header>
+
+    <!-- About Me Section - Bento Grid -->
+    <section class="section-padding" id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <p>An engineer who codes, and a developer who understands physics</p>
+        </div>
+
+        <div class="bento-grid">
+            <div class="bento-item bento-large bento-tall">
+                <h3><i class="fas fa-user"></i> Professional Bio</h3>
+                <p>
+                    I'm a B.Tech Mechanical Engineering student specializing in automation and machine learning. My
+                    passion lies in applying computational methods and ML algorithms to solve real-world engineering
+                    challenges.
+                </p>
+                <p style="margin-top: 1rem;">
+                    Currently developing expertise in thermal analysis using ANSYS Fluent and building ML models with
+                    Python. I'm eager to work on projects that combine mechanical engineering principles with
+                    data-driven solutions.
+                </p>
+            </div>
+
+            <div class="bento-item">
+                <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+                <p><strong>Kollam, Kerala</strong></p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Hometown: Calicut<br>Open to relocation</p>
+            </div>
+
+            <div class="bento-item">
+                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                <p><strong>B.Tech Mechanical Engineering</strong></p>
+                <p style="font-size: 0.85rem; margin-top: 0.3rem;">TKM College of Engineering<br>2022 - 2026</p>
+            </div>
+
+            <div class="bento-item bento-large">
+                <h3><i class="fas fa-code"></i> Primary Tech Stack</h3>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Scikit-learn</span>
+                    <span class="tech-badge">ANSYS Fluent</span>
+                    <span class="tech-badge">Machine Learning</span>
+                    <span class="tech-badge">CAD</span>
+                    <span class="tech-badge">Thermal Analysis</span>
+                </div>
+            </div>
+
+            <div class="bento-item">
+                <h3><i class="fas fa-language"></i> Languages</h3>
+                <p><strong>English</strong> - Fluent<br>
+                    <strong>Malayalam</strong> - Native
+                </p>
+            </div>
+
+            <div class="bento-item">
+                <h3><i class="fas fa-trophy"></i> Certifications</h3>
+                <p style="font-size: 0.85rem;">
+                    Currently pursuing certifications in:<br>
+                    Machine Learning<br>
+                    ANSYS Simulation
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section class="section-padding" id="experience">
+        <div class="section-header">
+            <h2>Academic Journey & Projects</h2>
+            <p>Building skills through hands-on learning</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2024 - Present</div>
+                <h3>Machine Learning Projects</h3>
+                <div class="timeline-company">Academic & Self-Learning</div>
+                <ul>
+                    <li>Developing fraud detection systems using Python and Scikit-learn</li>
+                    <li>Exploring supervised learning algorithms and model optimization techniques</li>
+                    <li>Building practical ML solutions for real-world engineering problems</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2023 - 2024</div>
+                <h3>Thermal Analysis Specialist</h3>
+                <div class="timeline-company">Academic Projects - TKM College</div>
+                <ul>
+                    <li>Performed CFD analysis using ANSYS Fluent for thermal management systems</li>
+                    <li>Conducted numerical analysis of cobweb channel with porous media coldplate</li>
+                    <li>Optimized heat transfer systems through computational simulations</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-date">2022 - 2023</div>
+                <h3>Mechanical Engineering Fundamentals</h3>
+                <div class="timeline-company">TKM College of Engineering</div>
+                <ul>
+                    <li>Mastered core mechanical engineering principles including thermodynamics and fluid mechanics
+                    </li>
+                    <li>Gained hands-on experience with CAD software and design tools</li>
+                    <li>Developed strong foundation in mathematics and computational methods</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="section-padding" id="education">
+        <div class="section-header">
+            <h2>Education & Skills Development</h2>
+            <p>Building a strong technical foundation</p>
+        </div>
+
+        <div class="education-grid">
+            <div class="education-card">
+                <span class="education-badge">BACHELOR'S DEGREE</span>
+                <h3>B.Tech Mechanical Engineering</h3>
+                <div class="education-meta">TKM College of Engineering • 2022 - 2026</div>
+                <p>Focus: Automation, Machine Learning, Thermal Systems<br>Currently pursuing</p>
+            </div>
+
+            <div class="education-card">
+                <span class="education-badge">TECHNICAL SKILLS</span>
+                <h3>Python & ML</h3>
+                <div class="education-meta">Self-taught & Academic Projects</div>
+                <p>Scikit-learn, Data Analysis, Algorithm Development</p>
+            </div>
+
+            <div class="education-card">
+                <span class="education-badge">SIMULATION</span>
+                <h3>ANSYS Fluent</h3>
+                <div class="education-meta">Academic Training</div>
+                <p>CFD Analysis, Thermal Simulations, Numerical Methods</p>
+            </div>
+
+            <div class="education-card">
+                <span class="education-badge">IN PROGRESS</span>
+                <h3>Certifications</h3>
+                <div class="education-meta">Ongoing Learning</div>
+                <p>Pursuing ML and ANSYS certifications</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section-padding" id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>Real-world solutions to complex problems</p>
+            <div class="controls">
+                <button class="filter-btn active" onclick="filterProjects('all', event)">All Projects</button>
+                <button class="filter-btn" onclick="filterProjects('software', event)">Software</button>
+                <button class="filter-btn" onclick="filterProjects('mechanical', event)">Engineering</button>
+                <button class="filter-btn" onclick="filterProjects('ai', event)">AI/ML</button>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <!-- Project 1 -->
+            <div class="card software ai">
+                <div class="card-img"></div>
+                <div class="card-content">
+                    <div class="tag-group">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Cloud</span>
+                    </div>
+                    <h3>End-to-End AI Microservice (Fraud Logic)</h3>
+                    <p><strong>Problem:</strong> The challenge was to architect a production-ready system that a live,
+                        accessible web service.<br>
+                        <strong>Action:</strong> Built a full-stack pipeline using FastAPI (Backend) and Scikit-learn.
+                        Engineered a Synthetic Data Simulator to mimic imbalanced fraud patterns and deployed the
+                        solution to the cloud via Render.<br>
+                        <strong>Result:</strong> A live, scalable REST API handling real-time inference, featuring data
+                        persistence (SQLite) and a responsive frontend interface.
+                    </p>
+                    <div class="card-footer">
+                        <a href="fraud-detection-details.html" class="card-link"><i class="fas fa-info-circle"></i> View
+                            Details</a>
+                        <a href="https://github.com/Basith235/Fraud-detector-" target="_blank" class="card-link"><i
+                                class="fab fa-github"></i> GitHub</a>
+                        <a href="https://basith235.github.io/Fraud-detector-/" target="_blank" class="card-link"><i
+                                class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card mechanical">
+                <div class="card-img" style="background: linear-gradient(45deg, #10b981, #3b82f6);"></div>
+                <div class="card-content">
+                    <div class="tag-group">
+                        <span class="tag">ANSYS Fluent</span>
+                        <span class="tag">CFD</span>
+                        <span class="tag">Thermal Analysis</span>
+                    </div>
+                    <h3>Cobweb Channel Cold Plate Analysis</h3>
+                    <p><strong>Problem:</strong> Optimize thermal performance of porous media cold plate.<br>
+                        <strong>Action:</strong> Numerical analysis of cobweb channel design using ANSYS Fluent CFD.<br>
+                        <strong>Result:</strong> Gained expertise in CFD simulation and thermal system optimization.
+                    </p>
+                    <div class="card-footer">
+                        <a href="https://drive.google.com/file/d/1KwRKUmtA5-2NH5E0CwvNrCIIY1o41z1Q/view?usp=drive_link"
+                            target="_blank" class="card-link"><i class="fas fa-file-pdf"></i>
+                            Technical Report</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section-padding" id="contact">
+        <div class="contact-cta">
+            <h2>Let's Connect and Collaborate</h2>
+            <p style="margin-bottom: 2rem;">I'm eager to learn and contribute to innovative projects in mechanical
+                engineering and ML.
+            </p>
+            <div class="btn-group">
+                <a href="mailto:mhmdbacith@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> mhmdbacith@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/muhammed-basith-8279902b5" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-linkedin"></i> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/muhammed-basith-8279902b5" target="_blank" aria-label="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="mailto:mhmdbacith@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 Muhammed Basith N. Crafted with precision and passion.</p>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Dark Mode Toggle
+        const themeBtn = document.getElementById('themeBtn');
+        const body = document.body;
+        const icon = themeBtn.querySelector('i');
+
+        if (localStorage.getItem('theme') === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeBtn.addEventListener('click', () => {
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                icon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                icon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // Project Filtering with Smooth Transitions
+        function filterProjects(category, event) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+
+                setTimeout(() => {
+                    const isMatch = category === 'all' || card.classList.contains(category);
+
+                    if (isMatch) {
+                        card.classList.remove('hidden');
+                        card.classList.add('filter-show');
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.classList.add('hidden');
+                        card.classList.remove('filter-show');
+                    }
+                }, 300);
+            });
+        }
+
+        // Back to Top
+        const btt = document.getElementById('backToTop');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                btt.style.display = "block";
+            } else {
+                btt.style.display = "none";
+            }
+        };
+        btt.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Download CV Function
+        function downloadCV(e) {
+            e.preventDefault();
+            alert('CV Download Feature:\n\nIn production, this would download your actual resume PDF.\n\nFor now, replace this alert with:\nwindow.location.href = "/path/to/your/resume.pdf";');
+        }
+    </script>
+</body>
+
+</html>
