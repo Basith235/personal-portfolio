@@ -709,7 +709,7 @@
                 <a href="#about" onclick="navigateTo('portfolio-view');">SYS.ABOUT</a>
                 <a href="#experience" onclick="navigateTo('portfolio-view');">SYS.LOG</a>
                 <a href="#projects" onclick="navigateTo('portfolio-view');">SYS.PROJECTS</a>
-                <a href="#" class="nav-cv-btn" onclick="downloadCV(event)">[ DL_RESUME ]</a>
+                <a href="resume.pdf" class="nav-cv-btn" target="_blank" rel="noopener">[ DL_RESUME ]</a>
                 <button class="theme-toggle" id="themeBtn" aria-label="Toggle Theme">
                     <i class="fas fa-sun"></i>
                 </button>
@@ -1096,7 +1096,13 @@
         // === DOWNLOAD CV ===
         function downloadCV(e) {
             e.preventDefault();
-            alert('SYSTEM PROMPT:\n\nPlease connect your local resume.pdf to the anchor tag in the code (href="resume.pdf").');
+            const href = 'resume.pdf';
+            fetch(href, { method: 'HEAD' }).then(res => {
+                if (res.ok) window.open(href, '_blank');
+                else alert('Resume not found. Please add resume.pdf to the project root.');
+            }).catch(() => {
+                alert('Resume not found. Please add resume.pdf to the project root.');
+            });
         }
     </script>
 </body>
